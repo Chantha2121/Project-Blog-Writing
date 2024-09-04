@@ -1,0 +1,210 @@
+.single {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+
+  .content {
+    flex: 3;
+    max-width: 70%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: -60px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      color: white;
+      z-index: 1;
+      gap: 10px;
+      max-width: 100%;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        span {
+          font-weight: bold;
+        }
+
+        .day {
+          margin: 0;
+          font-size: 14px;
+          color: #43efec;
+        }
+      }
+
+      .edit {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+        align-items: center;
+
+        .icon {
+          font-size: 20px;
+          cursor: pointer;
+          color: white;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #007bff; // Change color on hover
+          }
+        }
+
+        .edit {
+          color: #28a745; // Green color for edit
+        }
+
+        .delete {
+          color: #dc3545; // Red color for delete
+        }
+      }
+    }
+
+    .text-content {
+      margin-top: 10px; // Ensure enough space from the profile section
+
+      h1 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+        text-align: left;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        line-height: 1.4;
+      }
+
+      p {
+        width: 100%;
+        margin: 20px 0;
+        padding: 0;
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+      }
+    }
+  }
+
+  .menu {
+    flex: 1;
+    max-width: 30%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Lighter shadow for a more subtle effect
+
+    h1 {
+      font-size: 18px; // Smaller font size for the section heading
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; // Smaller gap between posts
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      h2 {
+        font-size: 16px; // Smaller font size for post titles
+        color: #333;
+        margin: 5px 0; // Reduced margin
+      }
+
+      button {
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 6px 12px; // Smaller padding
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+        height: 38px; // Smaller font size for button text
+        transition: background-color 0.3s;
+        margin-bottom: 8px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .content {
+      max-width: 100%;
+      margin-bottom: 20px; // Add space between content and menu
+    }
+
+    .menu {
+      max-width: 100%;
+      padding: 0; // Remove padding for smaller screens
+      box-shadow: none; // Remove shadow for smaller screens
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      h1 {
+        font-size: 24px; // Smaller font size for h1 on very small screens
+      }
+
+      p {
+        font-size: 16px; // Smaller font size for p on very small screens
+      }
+    }
+
+    .menu {
+      h1 {
+        font-size: 16px; // Even smaller font size for menu heading
+      }
+
+      div {
+        h2 {
+          font-size: 14px; // Smaller font size for post titles
+        }
+
+        button {
+          font-size: 10px; // Smaller font size for button text
+          padding: 4px 8px; // Smaller padding
+        }
+      }
+    }
+  }
+}

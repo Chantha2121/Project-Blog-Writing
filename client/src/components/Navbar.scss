@@ -1,0 +1,159 @@
+.navbar {
+  background-color: #101236;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: height 0.3s ease;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 50px;
+        border-radius: 2px;
+      }
+
+      .text {
+        margin-left: 18px;
+        color: rgb(85, 222, 246);
+        font-size: 18px;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .link,
+      span,
+      button {
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+        padding: 0 18px;
+        line-height: 1.5;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s, background-color 0.3s;
+
+        &:hover {
+          color: #f0a500;
+        }
+      }
+
+      button {
+        background-color: green;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darkgreen;
+        }
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+
+        button {
+          background-color: blue;
+
+          &:hover {
+            background-color: darkblue;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+
+        &.active {
+          max-height: 300px; /* or an appropriate max height */
+        }
+
+        .link,
+        span,
+        button {
+          font-size: 14px; /* Smaller font size for small screens */
+          height: 40px; /* Fixed height for link actions */
+          padding: 10px 20px;
+          width: 100%;
+          text-align: left;
+          box-sizing: border-box; /* Include padding in the height calculation */
+        }
+
+        .auth-buttons,
+        .user-info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          button {
+            padding: 6px 12px; /* Adjust padding for smaller buttons */
+            width: 100%; /* Ensure buttons take full width */
+          }
+        }
+
+        .user-info {
+          align-items: flex-start;
+
+          .logout-button {
+            background-color: red;
+
+            &:hover {
+              background-color: darkred;
+            }
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      height: 60px; /* Fixed height for the container on small screens */
+    }
+
+    &.menu-open .container {
+      height: auto; /* Allow container to expand when menu is open */
+    }
+
+    .active {
+      height: 800px;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+.add {
+  margin-top: 120px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+
+  .content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #79d7e2;
+      border-radius: 5px;
+      outline: none;
+      text-align: center;
+      background-color: #ededed;
+      color: rgb(42, 67, 206);
+    }
+
+    .editContent {
+      .ql-container {
+        height: 300px;
+        border-radius: 5px;
+        border: 1px solid #79d7e2;
+        background-color: #fff;
+      }
+
+      p {
+        font-size: 20px;
+        color: #004d40;
+      }
+    }
+  }
+
+  .menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .item {
+      padding: 20px;
+      background-color: #e0f7fa;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+      .texth {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #00796b;
+      }
+
+      span {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        b {
+          color: #00796b;
+        }
+      }
+
+      input[type="file"] {
+        display: none; // Hide the actual file input
+      }
+
+      label[for="file"] {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #79e287;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 15px;
+        margin-right: 10px;
+        background-color: #00796b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #004d40;
+        }
+      }
+    }
+
+    .category {
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: #00796b;
+
+        input[type="radio"] {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .content, .menu {
+      width: 100%;
+    }
+
+    .menu {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .item {
+        flex: 1;
+        margin-bottom: 20px;
+      }
+
+      .category {
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+
+    .content {
+      input[type="text"] {
+        font-size: 16px;
+      }
+    }
+
+    .menu {
+      .item {
+        padding: 10px;
+
+        .texth {
+          font-size: 20px;
+        }
+
+        span {
+          font-size: 14px;
+        }
+
+        button {
+          padding: 8px 12px;
+          font-size: 14px;
+        }
+      }
+
+      .category {
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
